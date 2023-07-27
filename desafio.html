@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+      function idade() {
+    const idade = parseInt(document.getElementById("idade").value);
+
+    let fase;
+    if (idade <= 11) {
+        fase = "criança";
+    } else if (idade >= 12 && idade <=20){
+        fase = "adolescente";
+    } else if (idade >= 21 && idade <=64){
+        fase = "adulto";
+    } else{
+        fase = "idoso";
+    }
+    const resultado = document.getElementById("res");
+    resultado.innerHTML = `A pessoa é ${fase}.`;
+} 
+    </script>
+
+    <style>
+        * {
+            margin: 0px auto;
+            padding: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: oblique;
+            font-size: 18px;
+            border: 1px solid transparent;
+            width: 80%;
+        }
+
+        main {
+            border: 1px dashed #812cf9;
+            margin: 8px auto;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            /* width: 80%; */
+            min-width: 30%;
+            background-color: rgb(105, 181, 236);
+        }
+
+        header {
+            margin: 8px auto;
+            padding: 8px;
+            border: 1px dotted #000000;
+            text-align: center;
+            align-items: center;
+            background-color: #f755f75c;
+        }
+
+        footer {
+            margin: 64px auto;
+            background-color: #ce6bc446;
+            border: 1px solid #ff71eca0
+        }
+
+        button {
+            width: 50%;
+            height: 32px;
+            border-radius: 30px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            margin: 5px auto;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input {
+            border: 2px solid #0000002d;
+        }
+    </style>
+</head>
+
+<body>
+    <header>        
+        <h1 style="font-size: 48px;">Classificação por idade</h1>    
+    </header>
+    <main>
+        <div>
+
+            <div class="row">
+                <label for="nome">Nome: </label>
+                <input size="20"  id="nome" type="text" placeholder="Digite o nome da pessoa" value="Pessoa" />
+            </div>
+            <div class="row">
+                <label for="idade">Idade: </label>
+                <input size="20"  id="idade" type="number" placeholder="Digite a idade da pessoa" value="22" />
+            </div>
+            <div>
+                <button class="button" onclick="idade()"> Avaliar Idade </button>
+            </div>
+        </div>
+        
+        <p id="res"></p>
+    </main>
+    <footer>
+        <p style="text-align: center;">© 2023 - Isabella</p>
+    </footer>
+</body>
+
+</html>
